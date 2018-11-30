@@ -1,7 +1,7 @@
 package sample.spring4.ch1.bankapp.service;
 
 import sample.spring4.ch1.bankapp.dao.FixedDepositDao;
-import sample.spring4.ch1.bankapp.model.FixedDepositDetails;
+import sample.spring4.ch1.bankapp.domain.model.FixedDepositDetails;
 
 /**
  * Created by Rene on 2018. 9. 10..
@@ -18,7 +18,4 @@ public class FixedDepositService {
         this.fixedDapositDao = fixedDapositDao;
     }
 
-    public FixedDepositDao getFixedDapositDao() {
-        return fixedDapositDao;
-    }
 }

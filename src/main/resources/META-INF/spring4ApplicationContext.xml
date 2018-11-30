@@ -9,8 +9,12 @@
 
     <bean id="service" class="sample.spring4.ch1.bankapp.service.FixedDepositService">
         <property name="fixedDapositDao" ref="dao" />
+        <!--property name="fixedDapositDao">
+            <bean class="sample.spring4.ch1.bankapp.dao.FixedDepositDao" />
+        </property-->
     </bean>
 
     <bean id="dao" class="sample.spring4.ch1.bankapp.dao.FixedDepositDao" />
+
 
 </beans>

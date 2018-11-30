@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p : (%F:%L) %m%n"/>
+        </layout>
+    </appender>
+    <appender name="applicationAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/applicationLog.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd-HH"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p : (%t) (%F:%L) %m%n"/>
+        </layout>
+    </appender>
+    <appender name="tobyiAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/tobyiLog.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd-HH"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p : (%t) (%F:%L) %m%n"/>
+        </layout>
+    </appender>
+    <logger name="sample.spring4.ch1" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="applicationAppender"/>
+    </logger>
+    <logger name="tobyiLog" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="tobyiAppender"/>
+    </logger>
+    <root>
+        <level value="info"/>
+        <appender-ref ref="ConsoleAppender"/>
+    </root>
+</log4j:configuration>

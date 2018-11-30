@@ -1,4 +1,4 @@
-package sample.spring4.ch1.bankapp.model;
+package sample.spring4.ch1.bankapp.domain.model;
 
 /**
  * Created by Rene on 2018. 9. 10..

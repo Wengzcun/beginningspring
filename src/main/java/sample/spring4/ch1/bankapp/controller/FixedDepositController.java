@@ -1,7 +1,7 @@
 package sample.spring4.ch1.bankapp.controller;
 
 import org.apache.log4j.Logger;
-import sample.spring4.ch1.bankapp.model.FixedDepositDetails;
+import sample.spring4.ch1.bankapp.domain.model.FixedDepositDetails;
 import sample.spring4.ch1.bankapp.service.FixedDepositService;
 
 
@@ -17,7 +17,7 @@ public class FixedDepositController {
         this.fixedDepositService = fixedDepositService;
     }
 
-    public void submit() {
-        fixedDepositService.createFixedDeposit(new FixedDepositDetails(1, 10000, 365, "centauros@gmail.com"));
+    public boolean submit() {
+        return fixedDepositService.createFixedDeposit(new FixedDepositDetails(1, 10000, 365, "centauros@gmail.com"));
     }
 }
